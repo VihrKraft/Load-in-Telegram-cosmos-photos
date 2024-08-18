@@ -10,7 +10,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Программа для скачивания фотографий Земли с космоса от NASA'
     )
-    parser.add_argument('--number', help='Введите колличество изображений', type=int, default=5)
+    parser.add_argument('--images_count', help='Введите колличество изображений', type=int, default=5)
     args = parser.parse_args()
     token = os.environ['TOKEN']
     url = 'https://api.nasa.gov/EPIC/api/natural/images'
@@ -19,7 +19,7 @@ def main():
     }
     response = requests.get(url, params=payload)
     response.raise_for_status()
-    for image in range(args.number):
+    for image in range(args.images_count):
         name = response.json()[image]['image']
         year, mouth, day = response.json()[image]['date'].split('-')
         day, time = day.split()

@@ -16,13 +16,13 @@ def main():
     parser = argparse.ArgumentParser(
         description='Программа для скачивания фотографий дня NASA'
     )
-    parser.add_argument('--number', help='Введите колличество изображений', default=30)
+    parser.add_argument('--images_count', help='Введите колличество изображений', default=30)
     args = parser.parse_args()
     token = os.environ['TOKEN']
     url = 'https://api.nasa.gov/planetary/apod'
     payload = {
         'api_key': token,
-        'count': args.number,
+        'count': args.images_count,
     }
     response = requests.get(url, params=payload)
     response.raise_for_status()

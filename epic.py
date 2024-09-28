@@ -19,12 +19,12 @@ def main():
     }
     response = requests.get(url, params=payload)
     response.raise_for_status()
-    for image in range(args.images_count):
-        name = response.json()[image]['image']
-        year, mouth, day = response.json()[image]['date'].split('-')
+    for image_number in range(args.images_count):
+        name = response.json()[image_number]['image']
+        year, mouth, day = response.json()[image_number]['date'].split('-')
         day, time = day.split()
         img_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{mouth}/{day}/png/{name}.png'
-        file_name = f'epic_{image+1}.png'
+        file_name = f'epic_{image_number+1}.png'
         download_images(img_url, file_name, token)
 
 

@@ -9,7 +9,7 @@ import argparse
 def main():
     load_dotenv()
     chat_id = '@cosmos_photos_2_0'
-    bot = telegram.Bot(token=os.environ['BOT_TOKEN'])
+    bot = telegram.Bot(token=os.environ['TELEGRAM_BOT_TOKEN'])
     parser = argparse.ArgumentParser(
         description='Программа для автоматической загрузки изображений в Telegram'
     )

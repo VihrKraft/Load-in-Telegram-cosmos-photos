@@ -18,7 +18,7 @@ def main():
     )
     parser.add_argument('--images_count', help='Введите колличество изображений', default=30)
     args = parser.parse_args()
-    token = os.environ['TOKEN']
+    token = os.environ['NASA_API_TOKEN']
     url = 'https://api.nasa.gov/planetary/apod'
     payload = {
         'api_key': token,

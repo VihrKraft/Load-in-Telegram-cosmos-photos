@@ -12,7 +12,7 @@ def main():
     )
     parser.add_argument('--images_count', help='Введите колличество изображений', type=int, default=5)
     args = parser.parse_args()
-    token = os.environ['TOKEN']
+    token = os.environ['NASA_API_TOKEN']
     url = 'https://api.nasa.gov/EPIC/api/natural/images'
     payload = {
         'api_key': token,

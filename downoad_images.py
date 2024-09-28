@@ -3,7 +3,7 @@ import requests
 import os
 
 
-def download_images(url, file_name, token=''):
+def download_image(url, file_name, token=''):
     Path("images").mkdir(parents=True, exist_ok=True)
     file_path = f'images/{file_name}'
     payload = {

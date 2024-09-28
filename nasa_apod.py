@@ -1,5 +1,5 @@
 import requests
-from downoad_images import download_images
+from downoad_images import download_image
 from os.path import splitext
 from urllib.parse import urlsplit
 import os
@@ -31,7 +31,7 @@ def main():
         image_link = image_link['url']
         extension = get_extension(image_link)
         file_name = f'nasa_apod_{image_number+1}{extension}'
-        download_images(image_link, file_name)
+        download_image(image_link, file_name)
 
 
 if __name__ == '__main__':

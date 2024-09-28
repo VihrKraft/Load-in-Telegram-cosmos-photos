@@ -1,6 +1,6 @@
 import requests
 import argparse
-from downoad_images import download_images
+from downoad_images import download_image
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     links_images = response.json()["links"]['flickr']['original']
     for image_number, image_link in enumerate(links_images):
         file_name = f'space_{image_number+1}.jpg'
-        download_images(image_link, file_name)
+        download_image(image_link, file_name)
 
 
 if __name__ == '__main__':

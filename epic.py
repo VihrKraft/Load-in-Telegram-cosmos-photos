@@ -1,4 +1,4 @@
-from downoad_images import download_images
+from downoad_images import download_image
 import requests
 from dotenv import load_dotenv
 import os
@@ -26,7 +26,7 @@ def main():
         day, time = day.split()
         img_url = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{mouth}/{day}/png/{name}.png'
         file_name = f'epic_{image_number+1}.png'
-        download_images(img_url, file_name, token)
+        download_image(img_url, file_name, token)
 
 
 if __name__ == '__main__':

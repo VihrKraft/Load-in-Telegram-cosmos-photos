@@ -6,7 +6,7 @@ import os
 import argparse
 
 
-def getting_an_extension(url):
+def get_extension(url):
     url = urlsplit(url)
     path, extension = splitext(url.path)
     return extension
@@ -29,7 +29,7 @@ def main():
     images_links = response.json()
     for image_number, image_link in enumerate(images_links):
         image_link = image_link['url']
-        extension = getting_an_extension(image_link)
+        extension = get_extension(image_link)
         file_name = f'nasa_apod_{image_number+1}{extension}'
         download_images(image_link, file_name)
 

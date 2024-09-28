@@ -14,12 +14,13 @@ pip install -r requirements.txt
 
 Для работы `epic.py` и `nasa_apod.py` нужен Api токен, который можно получить на [сайте Nasa](https://api.nasa.gov/). Его нужно поместить в файл `.env`, например:
 ```
-TOKEN=yVIsfJkKxUC3e79bCSRghopBpT5TAQzwmhsMvfKy
+NASA_API_TOKEN=yVIsfJkKxUC3e79bCSRghopBpT5TAQzwmhsMvfKy
 ```
 
-Для публикации фотографий в Телеграм-канал нужно создать бота, добавить его в канал и сделать админом (подробнее [здесь](https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/#03)). Токен бота тоже должен быть помещен в файл `.env`. Вот пример:
+Для публикации фотографий в Телеграм-канал нужно создать бота, добавить его в канал и сделать админом (подробнее [здесь](https://smmplanner.com/blog/otlozhennyj-posting-v-telegram/#03)). Токен бота и id чата тоже должны быть помещены в файл `.env`. Вот пример:
 ```
-BOT_TOKEN=66785732344:HHTlqnXh3LHu4Mo-D2mrOgQKkT4BsrCUxPv
+TELEGRAM_BOT_TOKEN=66785732344:HHTlqnXh3LHu4Mo-D2mrOgQKkT4BsrCUxPv
+TELEGRAM_CHAT_ID=cosmos_photos_bot
 ```
 
 ### Как запустить

@@ -27,10 +27,10 @@ def main():
     response = requests.get(url, params=payload)
     response.raise_for_status()
     images_links = response.json()
-    for image_number, image_link in enumerate(images_links):
+    for image_number, image_link in enumerate(images_links, start=1):
         image_link = image_link['url']
         extension = get_extension(image_link)
-        file_name = f'nasa_apod_{image_number+1}{extension}'
+        file_name = f'nasa_apod_{image_number}{extension}'
         download_image(image_link, file_name)
 
 

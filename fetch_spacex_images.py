@@ -13,8 +13,8 @@ def main():
     response = requests.get(url)
     response.raise_for_status() 
     links_images = response.json()["links"]['flickr']['original']
-    for image_number, image_link in enumerate(links_images):
-        file_name = f'space_{image_number+1}.jpg'
+    for image_number, image_link in enumerate(links_images, start=1):
+        file_name = f'space_{image_number}.jpg'
         download_image(image_link, file_name)
 
 
